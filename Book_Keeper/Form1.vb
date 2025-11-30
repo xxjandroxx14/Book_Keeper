@@ -20,6 +20,12 @@ Public Class Form1
             MessageBox.Show("Please enter a value in all required fields!", "Missing Value", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
+
+        If IsDuplicateRecord(TextBoxTitle.Text, TextBoxAuthor.Text, TextBoxCategory.Text) Then
+            MessageBox.Show("A record with the same Title, Author, and Category already exists.", "Duplicate Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
         Dim query As String = "INSERT INTO new_client.client_table ( title,author,category,availability) VALUES ( @title, @author, @category, @availability);"
         Try
             Using conn As New MySqlConnection(CONN_STRING)
@@ -36,13 +42,36 @@ Public Class Form1
                     TextBoxAuthor.Clear()
                     TextBoxCategory.Clear()
                     TextBoxAvailability.Clear()
-                    ButtonRead_Click(Nothing, EventArgs.Empty)
+
                 End Using
             End Using
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+
+
+    Private Function IsDuplicateRecord(title As String, author As String, category As String) As Boolean
+        Dim query As String = "SELECT COUNT(id) FROM new_client.client_table WHERE title = @title AND author = @author AND category = @category;"
+        Try
+            Using conn As New MySqlConnection(CONN_STRING)
+                conn.Open()
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@title", title)
+                    cmd.Parameters.AddWithValue("@author", author)
+                    cmd.Parameters.AddWithValue("@category", category)
+
+                    Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                    Return count > 0 '
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error checking for duplicates: " & ex.Message)
+            Return True
+        End Try
+    End Function
+
+
     Private Sub ButtonRead_Click(sender As Object, e As EventArgs) Handles ButtonRead.Click
         Dim query As String = "SELECT * FROM new_client.client_table;"
         Try
@@ -91,7 +120,7 @@ Public Class Form1
                     cmd.Parameters.AddWithValue("@availability", TextBoxAvailability.Text)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Record updated successfully!")
-                    ButtonRead_Click(Nothing, EventArgs.Empty)
+
                 End Using
             End Using
         Catch ex As Exception
