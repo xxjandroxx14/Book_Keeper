@@ -42,36 +42,40 @@ Partial Class Form1
         ' 
         ' ButtonConnect
         ' 
-        ButtonConnect.Location = New Point(260, 39)
+        ButtonConnect.Font = New Font("Times New Roman", 12F)
+        ButtonConnect.Location = New Point(337, 365)
         ButtonConnect.Name = "ButtonConnect"
-        ButtonConnect.Size = New Size(76, 23)
+        ButtonConnect.Size = New Size(76, 32)
         ButtonConnect.TabIndex = 0
         ButtonConnect.Text = "Connect"
         ButtonConnect.UseVisualStyleBackColor = True
         ' 
         ' ButtonUpdate
         ' 
-        ButtonUpdate.Location = New Point(544, 39)
+        ButtonUpdate.Font = New Font("Times New Roman", 12F)
+        ButtonUpdate.Location = New Point(622, 365)
         ButtonUpdate.Name = "ButtonUpdate"
-        ButtonUpdate.Size = New Size(75, 23)
+        ButtonUpdate.Size = New Size(75, 32)
         ButtonUpdate.TabIndex = 1
         ButtonUpdate.Text = "Update"
         ButtonUpdate.UseVisualStyleBackColor = True
         ' 
         ' ButtonDelete
         ' 
-        ButtonDelete.Location = New Point(625, 39)
+        ButtonDelete.Font = New Font("Times New Roman", 12F)
+        ButtonDelete.Location = New Point(703, 365)
         ButtonDelete.Name = "ButtonDelete"
-        ButtonDelete.Size = New Size(75, 23)
+        ButtonDelete.Size = New Size(75, 32)
         ButtonDelete.TabIndex = 2
         ButtonDelete.Text = "Delete"
         ButtonDelete.UseVisualStyleBackColor = True
         ' 
         ' ButtonCreate
         ' 
-        ButtonCreate.Location = New Point(361, 39)
+        ButtonCreate.Font = New Font("Times New Roman", 12F)
+        ButtonCreate.Location = New Point(425, 365)
         ButtonCreate.Name = "ButtonCreate"
-        ButtonCreate.Size = New Size(75, 23)
+        ButtonCreate.Size = New Size(75, 32)
         ButtonCreate.TabIndex = 3
         ButtonCreate.Text = "Create"
         ButtonCreate.UseVisualStyleBackColor = True
@@ -115,52 +119,57 @@ Partial Class Form1
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(244, 89)
+        DataGridView1.Location = New Point(337, 27)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(456, 332)
+        DataGridView1.Size = New Size(441, 332)
         DataGridView1.TabIndex = 9
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.Font = New Font("Times New Roman", 12F)
         Label2.Location = New Point(36, 153)
         Label2.Name = "Label2"
-        Label2.Size = New Size(44, 15)
+        Label2.Size = New Size(51, 19)
         Label2.TabIndex = 11
         Label2.Text = "Author"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(36, 103)
         Label3.Name = "Label3"
-        Label3.Size = New Size(30, 15)
+        Label3.Size = New Size(34, 19)
         Label3.TabIndex = 12
         Label3.Text = "Title"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(36, 206)
+        Label4.Font = New Font("Times New Roman", 12F)
+        Label4.Location = New Point(22, 206)
         Label4.Name = "Label4"
-        Label4.Size = New Size(55, 15)
+        Label4.Size = New Size(65, 19)
         Label4.TabIndex = 13
         Label4.Text = "Category"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(36, 256)
+        Label5.Font = New Font("Times New Roman", 12F)
+        Label5.Location = New Point(22, 256)
         Label5.Name = "Label5"
-        Label5.Size = New Size(65, 15)
+        Label5.Size = New Size(74, 19)
         Label5.TabIndex = 14
         Label5.Text = "Availability"
         ' 
         ' ButtonRead
         ' 
-        ButtonRead.Location = New Point(454, 39)
+        ButtonRead.Font = New Font("Times New Roman", 12F)
+        ButtonRead.Location = New Point(506, 365)
         ButtonRead.Name = "ButtonRead"
-        ButtonRead.Size = New Size(75, 23)
+        ButtonRead.Size = New Size(75, 32)
         ButtonRead.TabIndex = 15
         ButtonRead.Text = "Read"
         ButtonRead.UseVisualStyleBackColor = True
@@ -169,6 +178,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(800, 450)
         Controls.Add(ButtonRead)
         Controls.Add(Label5)
