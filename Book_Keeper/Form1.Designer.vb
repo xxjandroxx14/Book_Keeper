@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         ButtonConnect = New Button()
         ButtonUpdate = New Button()
         ButtonDelete = New Button()
@@ -37,13 +38,14 @@ Partial Class Form1
         Label4 = New Label()
         Label5 = New Label()
         ButtonRead = New Button()
+        SaveFileDialog1 = New SaveFileDialog()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ButtonConnect
         ' 
         ButtonConnect.Font = New Font("Times New Roman", 12F)
-        ButtonConnect.Location = New Point(337, 365)
+        ButtonConnect.Location = New Point(163, 353)
         ButtonConnect.Name = "ButtonConnect"
         ButtonConnect.Size = New Size(76, 32)
         ButtonConnect.TabIndex = 0
@@ -53,7 +55,7 @@ Partial Class Form1
         ' ButtonUpdate
         ' 
         ButtonUpdate.Font = New Font("Times New Roman", 12F)
-        ButtonUpdate.Location = New Point(622, 365)
+        ButtonUpdate.Location = New Point(472, 353)
         ButtonUpdate.Name = "ButtonUpdate"
         ButtonUpdate.Size = New Size(75, 32)
         ButtonUpdate.TabIndex = 1
@@ -63,7 +65,7 @@ Partial Class Form1
         ' ButtonDelete
         ' 
         ButtonDelete.Font = New Font("Times New Roman", 12F)
-        ButtonDelete.Location = New Point(703, 365)
+        ButtonDelete.Location = New Point(581, 353)
         ButtonDelete.Name = "ButtonDelete"
         ButtonDelete.Size = New Size(75, 32)
         ButtonDelete.TabIndex = 2
@@ -73,7 +75,7 @@ Partial Class Form1
         ' ButtonCreate
         ' 
         ButtonCreate.Font = New Font("Times New Roman", 12F)
-        ButtonCreate.Location = New Point(425, 365)
+        ButtonCreate.Location = New Point(259, 353)
         ButtonCreate.Name = "ButtonCreate"
         ButtonCreate.Size = New Size(75, 32)
         ButtonCreate.TabIndex = 3
@@ -82,7 +84,7 @@ Partial Class Form1
         ' 
         ' TextBoxId
         ' 
-        TextBoxId.Location = New Point(113, 56)
+        TextBoxId.Location = New Point(113, 49)
         TextBoxId.Name = "TextBoxId"
         TextBoxId.Size = New Size(100, 23)
         TextBoxId.TabIndex = 4
@@ -118,15 +120,17 @@ Partial Class Form1
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.BackgroundColor = SystemColors.ButtonHighlight
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(337, 27)
+        DataGridView1.Location = New Point(230, 49)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(441, 332)
+        DataGridView1.Size = New Size(445, 269)
         DataGridView1.TabIndex = 9
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.DarkGoldenrod
         Label2.Font = New Font("Times New Roman", 12F)
         Label2.Location = New Point(36, 153)
         Label2.Name = "Label2"
@@ -137,8 +141,9 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.DarkGoldenrod
         Label3.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(36, 103)
+        Label3.Location = New Point(53, 103)
         Label3.Name = "Label3"
         Label3.Size = New Size(34, 19)
         Label3.TabIndex = 12
@@ -147,6 +152,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.DarkGoldenrod
         Label4.Font = New Font("Times New Roman", 12F)
         Label4.Location = New Point(22, 206)
         Label4.Name = "Label4"
@@ -157,8 +163,9 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.DarkGoldenrod
         Label5.Font = New Font("Times New Roman", 12F)
-        Label5.Location = New Point(22, 256)
+        Label5.Location = New Point(13, 256)
         Label5.Name = "Label5"
         Label5.Size = New Size(74, 19)
         Label5.TabIndex = 14
@@ -167,7 +174,7 @@ Partial Class Form1
         ' ButtonRead
         ' 
         ButtonRead.Font = New Font("Times New Roman", 12F)
-        ButtonRead.Location = New Point(506, 365)
+        ButtonRead.Location = New Point(368, 353)
         ButtonRead.Name = "ButtonRead"
         ButtonRead.Size = New Size(75, 32)
         ButtonRead.TabIndex = 15
@@ -179,7 +186,8 @@ Partial Class Form1
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(800, 450)
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        ClientSize = New Size(800, 425)
         Controls.Add(ButtonRead)
         Controls.Add(Label5)
         Controls.Add(Label4)
@@ -217,5 +225,6 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents ButtonRead As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 
 End Class
